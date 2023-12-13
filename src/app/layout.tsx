@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -16,6 +17,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head><style> 
+        @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap');
+      </style>
+      </head>
       <body className={inter.className}>{children}</body>
     </html>
   )

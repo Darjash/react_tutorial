@@ -1,4 +1,54 @@
-:root {
+body {
+  background-color: rgb(235, 203, 203);
+
+}
+
+
+.square {
+  background-color: rgb(230, 218, 209);
+  height: 100px;
+  width: 100px;
+  font-size: 50px;
+
+}
+
+
+.game {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 200px;
+
+}
+
+.game-info > ol {
+  color: rgb(145, 60, 107);
+}
+
+.game-info button {
+  background: pink;
+  font-size: 30px;
+  border-radius: 10px;
+  
+}
+.status{
+  color: rgb(145, 60, 107);
+  margin-top: 10px;
+  margin-bottom: 30px;
+  
+}
+
+.container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  width: 300px;
+  margin: 0px;
+} 
+
+
+/* :root {
   --max-width: 1100px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
@@ -104,4 +154,4 @@ a {
   html {
     color-scheme: dark;
   }
-}
+} */
