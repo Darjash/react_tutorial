@@ -66,8 +66,6 @@ export default function Game() {
   const currentSquares = history[currentMove]; /// //to render the currently selected move, instead of always rendering the final move:
   const [xIsNext, setXIsNext] = useState(true);
 
-console.log(history[1]);
-
   function handlePlay(nextSquares :string[]) { /// /////will be called by the Board component to update the game.
     const nextHistory: string[][] = [...history.slice(0, currentMove + 1), nextSquares];
     setHistory(nextHistory);
@@ -91,7 +89,7 @@ Each time a move is made, you need to update currentMove to point to the latest 
       description = 'Go to game start';
     }
     return (
-      <li className="info-text" key={move}>
+      <li className="info-text" key={`${move + description}`}>
         <button type="button" onClick={() => jumpTo(move)}>{description}</button>
       </li>
     );
@@ -100,6 +98,7 @@ Each time a move is made, you need to update currentMove to point to the latest 
   return (
     <div className="game">
       <div className="game-board">
+        {/* eslint-disable-next-line react/jsx-no-bind */}
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
       </div>
       <div className="game-info">
