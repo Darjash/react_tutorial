@@ -1,11 +1,10 @@
-import { CenterFocusStrong } from "@mui/icons-material";
+//import { CenterFocusStrong } from "@mui/icons-material";
 import { Box, Button, Card, Stack, TextField} from "@mui/material";
 import { useState } from "react";
 
 export default function Form() {
-  const [price, setPrice] = useState(0)
+  const [price, setPrice] = useState('')
   const [comment, setComment] = useState('')
-  
 
   const handleComment = (e)=> {setComment(e.target.value)
     console.log(comment)}
@@ -45,7 +44,7 @@ export default function Form() {
           <Button 
           variant="contained"
           onClick={submitForm}
-          type="submit"> Submit </Button>
+          type="button"> Submit </Button>
         </Stack>
         </Card>
         </Box>
