@@ -1,5 +1,6 @@
 import Square from './square';
 import calculateWinner from './calulateWinner';
+import { Box } from '@mui/material';
 
 export default function Board({
     xIsNext,
@@ -33,8 +34,18 @@ export default function Board({
 
     return (
       <>
-        <div className="status">{status}</div>
-        <div className="container">
+        <Box sx={{
+          color:'rgb(145, 60, 107)',
+          marginTop:'10px',
+          marginBottom:'30px',
+        }}>{status}</Box>
+        <Box sx={{
+          display:'grid',
+          gridTemplateColumns:'1fr 1fr 1fr',
+          gridTemplateRows:'1fr 1fr 1fr',
+          width:'300px',
+          margin:'0px',
+        }} > {/*.container */}
           <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
           <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
           <Square value={squares[2]} onSquareClick={() => handleClick(2)} />
@@ -46,7 +57,7 @@ export default function Board({
           <Square value={squares[6]} onSquareClick={() => handleClick(6)} />
           <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
           <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
-        </div>
+        </Box>
       </>
     );
   }

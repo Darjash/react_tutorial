@@ -9,7 +9,7 @@ import MainPage from './pages/mainPage';
 export default function App() {
   
     return (
-      <div>
+      <>
         {/* <RouterProvider router={routers} /> */}
         <HashRouter>
           <Routes>
@@ -19,6 +19,6 @@ export default function App() {
             <Route path='/main' element={<MainPage/>}/>
           </Routes>
         </HashRouter>
-      </div>
+    </>
     )
   }

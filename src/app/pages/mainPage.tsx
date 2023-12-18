@@ -4,13 +4,14 @@ import { Link } from "react-router-dom";
 export default function MainPage() {
     return(
         <Box
-        className="mainPage"
         sx={{
           '& .MuiTextField-root': { m: 3, width: '30ch'},
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          height: '100vh', // Set a height to center vertically on the page
+          width: '100%',
+          height: '100vh',
+          background:'rgb(168, 209, 193)',
         }}> 
         <Card sx={{
         minWidth: 500, 

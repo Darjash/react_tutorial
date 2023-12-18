@@ -1,12 +1,17 @@
-import { IconButton } from "@mui/material";
+import { Box, IconButton } from "@mui/material";
 import HomeIcon from '@mui/icons-material/Home';
 
 export default function Header () {
     return (
-        <nav className="header">
+        <Box sx={{
+            display: 'flex',
+            width: '100%',
+            padding: '1em',
+            backgroundColor:'ghostwhite',
+        }}>
             <IconButton href ="/" size="large">
                 <HomeIcon />
             </IconButton>
-        </nav>
+        </Box>
     )
 }

@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Board from './board';
 import Header from './pages/header';
 import Template from './pages/template';
+import { Box, Button } from '@mui/material';
 
 
 
@@ -42,9 +43,20 @@ Each time a move is made, you need to update currentMove to point to the latest 
     }
     return (
       <li className="info-text" key={`${move + description}`}>
-        <button type="button" onClick={() => jumpTo(move)}>
+        <Button sx={{
+        background: 'pink',
+        fontSize:'20px',
+        borderRadius:'10px',
+        fontWeight:'normal',
+        color:'black',
+        }}
+        type="button" 
+        onClick={() => jumpTo(move)}
+        
+        
+        >
           {description}
-        </button>
+        </Button>
       </li>
     );
   });
@@ -52,17 +64,33 @@ Each time a move is made, you need to update currentMove to point to the latest 
   return (
     <Template>
     <Header/>
-    <div className="game">
-      {/* <Link to="/form">Form</Link> */}
-      <div className="game-board"> 
+     <Box className="game"
+     sx={{
+      fontFamily:"'Chakra Petch', sans-serif",
+      fontSize:'54px',
+      display:'flex',
+      justifyContent:'center',
+      alignItems:'center',
+      gap:'200px',
+      color:'rgb(209, 201, 201)',
+      //backgroundColor:'rgb(209, 201, 201)',
+      width:'100%',
+      height:'calc(100vh - 80px)',
+      }}>
+
+      <Box sx={{
+        width:'350px',
+      }}> 
         {/* eslint-disable-next-line react/jsx-no-bind */}
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
-      </div>
-      <div className="game-info">
+      </Box>
+      <Box className="game-info"
+      sx={{
+        color:'rgb(145, 60, 107)',
+      }}>
         <ol>{moves}</ol>
-      </div>
-    </div>
-    </Template>
-  );
+      </Box>
+      </Box>
+    </Template>);
 
 }

@@ -15,7 +15,13 @@ export default function Form() {
 }
   const submitForm = () =>{console.log(price,comment)}
   return (
-      <div className="formPage"> 
+      <Box sx={{
+        top:'0',
+        left:'0',
+        width: '100%',
+        height: '100%',
+        background:'rgb(146, 157, 183)',
+      }}> 
         <Header/>
         <Box
         component="form"
@@ -58,6 +64,6 @@ export default function Form() {
         </Card>
         </Box>
 
-      </div>
+      </Box>
     );
 }
