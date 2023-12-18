@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import Board from './board';
-import { Link } from 'react-router-dom';
 import Header from './pages/header';
 import Template from './pages/template';
 

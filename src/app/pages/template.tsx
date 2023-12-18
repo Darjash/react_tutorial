@@ -9,7 +9,6 @@ export default function Template ({children} :{children: ReactNode}) {
             width: '100%',
             minHeight: '100vh',
             background: 'rgb(209, 201, 201)'
-
         }}>
             {children}
         </Box>
