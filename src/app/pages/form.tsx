@@ -7,10 +7,10 @@ export default function Form() {
   const [price, setPrice] = useState('')
   const [comment, setComment] = useState('')
 
-  const handleComment = (e)=> {setComment(e.target.value)
+  const handleComment = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>)=> {setComment(e.target.value)
    // console.log(comment)
   }
-  const handlePrice = (e)=> {setPrice(e.target.value)
+  const handlePrice = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>)=> {setPrice(e.target.value)
   //console.log(price)
 }
   const submitForm = () =>{console.log(price,comment)}
@@ -42,7 +42,7 @@ export default function Form() {
           required
           type="number"
           value={price}
-          onChange={(event)=>handlePrice(event)}
+          onChange={(event)=>handlePrice(event )}
           />
 
           <TextField 
