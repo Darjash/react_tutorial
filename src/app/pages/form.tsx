@@ -1,21 +1,30 @@
 //import { CenterFocusStrong } from "@mui/icons-material";
 import { Box, Button, Card, Stack, TextField} from "@mui/material";
 import { useState } from "react";
+import Header from './header';
 
 export default function Form() {
   const [price, setPrice] = useState('')
   const [comment, setComment] = useState('')
 
   const handleComment = (e)=> {setComment(e.target.value)
-    console.log(comment)}
+   // console.log(comment)
+  }
   const handlePrice = (e)=> {setPrice(e.target.value)
-  console.log(price)}
+  //console.log(price)
+}
   const submitForm = () =>{console.log(price,comment)}
   return (
-      <> 
+      <div className="formPage"> 
+        <Header/>
         <Box
         component="form"
-        sx={{'& .MuiTextField-root': { m: 3, width: '30ch'},
+        sx={{
+          '& .MuiTextField-root': { m: 3, width: '30ch'},
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '100vh', // Set a height to center vertically on the page
         }}
         autoComplete="off"> 
        <Card sx={{maxWidth: 600 }}>
@@ -40,7 +49,7 @@ export default function Form() {
           />
         </Stack>
 
-        <Stack direction='row' mx={5} >
+        <Stack direction="column" alignItems="center" mx={5} my={3} >
           <Button 
           variant="contained"
           onClick={submitForm}
@@ -49,6 +58,6 @@ export default function Form() {
         </Card>
         </Box>
 
-      </>
+      </div>
     );
 }

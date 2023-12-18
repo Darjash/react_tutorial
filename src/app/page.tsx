@@ -1,18 +1,10 @@
 'use client';
 
-import { BrowserRouter, HashRouter, Route, RouterProvider, Routes, createBrowserRouter } from 'react-router-dom';
+import {HashRouter, Route, Routes} from 'react-router-dom';
 import Form from './pages/form';
 import Game from './game';
+import MainPage from './pages/mainPage';
 
-// const routers = createBrowserRouter([{
-//   path='/',
-//   element=<Game/>,
-// },
-// {
-//   path='/game',
-//   element=<Game/>,
-// }
-// ])
 
 export default function App() {
   
@@ -21,9 +13,10 @@ export default function App() {
         {/* <RouterProvider router={routers} /> */}
         <HashRouter>
           <Routes>
-            <Route index element={<Game/>} />
+            <Route index element={<MainPage/>} />
             <Route path='/game' element={<Game/>}/>
             <Route path='/form' element={<Form/>}/>
+            <Route path='/main' element={<MainPage/>}/>
           </Routes>
         </HashRouter>
       </div>

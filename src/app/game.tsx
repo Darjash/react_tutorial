@@ -3,9 +3,13 @@
 import { useState } from 'react';
 import Board from './board';
 import { Link } from 'react-router-dom';
+import Header from './pages/header';
+import Template from './pages/template';
+
 
 
 export default function Game() {
+  
   const [history, setHistory] = useState<string[][]>([Array(9).fill(null)]);
   const [currentMove, setCurrentMove] = useState(0); /// //Before you can implement jumpTo, you need the Game component to keep track of which step the user is currently viewing.
   const currentSquares = history[currentMove]; /// //to render the currently selected move, instead of always rendering the final move:
@@ -30,7 +34,6 @@ Each time a move is made, you need to update currentMove to point to the latest 
     setCurrentMove(nextMove);
     setXIsNext(nextMove % 2 === 0);
   }
-
   const moves = history.map((squares, move) => {
     let description;
     if (move > 0) {
@@ -48,9 +51,11 @@ Each time a move is made, you need to update currentMove to point to the latest 
   });
 
   return (
+    <Template>
+    <Header/>
     <div className="game">
-      <Link to="/form">Form</Link>
-      <div className="game-board">
+      {/* <Link to="/form">Form</Link> */}
+      <div className="game-board"> 
         {/* eslint-disable-next-line react/jsx-no-bind */}
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
       </div>
@@ -58,7 +63,7 @@ Each time a move is made, you need to update currentMove to point to the latest 
         <ol>{moves}</ol>
       </div>
     </div>
+    </Template>
   );
-
 
 }
